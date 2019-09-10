@@ -1,25 +1,26 @@
 package h06;
 
-
-//Voorbeeld 6.1
+//Voorbeeld 6.3
 
 import java.awt.*;
 import java.applet.*;
 
 
-public class Rekenen extends Applet {
+public class op3 extends Applet {
     double a;
     double b;
     double c;
     double uitkomst;
 
+
     public void init() {
-        a = 112;
-        b = 4;
-        uitkomst = (a / b) + 0.25 ;
+        a = 13;
+        b = 13;
+        c = 6;
+        uitkomst = (a + b) / c;
     }
 
     public void paint(Graphics g) {
-
+        g.drawString("De uitkomst is: " + uitkomst, 20, 20);
     }
 }
