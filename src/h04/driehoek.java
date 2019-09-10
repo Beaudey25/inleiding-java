@@ -14,5 +14,7 @@ public class driehoek extends Applet {
         setBackground(Color.white);
         g.setColor(Color.black);
         g.drawLine(10, 50, 50, 50);
+        g.drawLine(30, 10, 50, 50);
+        g.drawLine(10, 50, 30, 10);
     }
 }
