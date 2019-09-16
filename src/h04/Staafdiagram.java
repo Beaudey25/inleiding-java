@@ -5,7 +5,7 @@ package h04;
 import java.awt.*;
 import java.applet.*;
 
-public class staafdiagram extends Applet {
+public class Staafdiagram extends Applet {
 
     public void init() {
         setSize(100, 100);

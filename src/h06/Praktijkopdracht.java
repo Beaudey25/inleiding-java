@@ -6,7 +6,7 @@ import java.awt.*;
 import java.applet.*;
 
 
-public class praktijkopdracht extends Applet {
+public class Praktijkopdracht extends Applet {
     double a, b, c;
     double uitkomst;
 

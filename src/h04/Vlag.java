@@ -5,7 +5,7 @@ package h04;
 import java.awt.*;
 import java.applet.*;
 
-public class vlag extends Applet {
+public class Vlag extends Applet {
 
     public void init() {
         setSize(100, 100);

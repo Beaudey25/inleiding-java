@@ -5,7 +5,7 @@ package h04;
 import java.awt.*;
 import java.applet.*;
 
-public class driehoek extends Applet {
+public class Driehoek extends Applet {
 
     public void init() {
     }

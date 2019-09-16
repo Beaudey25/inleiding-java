@@ -7,7 +7,7 @@ import java.awt.*;
 import java.applet.*;
 
 
-public class op1 extends Applet {
+public class Op1 extends Applet {
     double a;
     double b;
     double c;

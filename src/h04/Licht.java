@@ -5,7 +5,7 @@ package h04;
 import java.awt.*;
 import java.applet.*;
 
-public class licht extends Applet {
+public class Licht extends Applet {
 
     public void init() {
        setSize(100,100);

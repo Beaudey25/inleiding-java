@@ -5,7 +5,7 @@ package h05;
 import java.awt.*;
 import java.applet.*;
 
-public class copy extends Applet {
+public class Op1 extends Applet {
 
     Color opvulkleur;
     Color lijnkleur;

@@ -5,7 +5,7 @@ package h05;
 import java.awt.*;
 import java.applet.*;
 
-public class Opdracht extends Applet {
+public class Op2 extends Applet {
    Color opvulkleurV;
    Color opvulkleurJ;
    Color opvulkleurH;
