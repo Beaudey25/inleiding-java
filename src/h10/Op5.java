@@ -1,93 +1,85 @@
 package h10;
 
-import java.applet.Applet;
-import java.awt.event.*;
+import java.applet.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class Op5 extends Applet {
-
     Label label;
     TextField tekstvak;
-    Button ok;
-    Button reset;
-    double gemmidelde;
-    double getalinput;
-    double cijferinput;
-    String tekstvakTekst;
-    String s;
-    String tekst;
-    String uitslag;
+    Button knop, reset;
+    String s, tekst, uitslag;
+    double cijferinput, gemiddelde, getalinput;
     int teller;
 
     public void init() {
-        super.init();
-        label = new Label("Vul hier je cijfer in:");
-        ok = new Button("Uitslag");
-        ok.addActionListener(new OkButtonListener());
-        reset = new Button("RESET");
+        label = new Label("Hier cijfers:");
+        tekstvak = new TextField("",15);
+        knop = new Button("Ok");
+        reset = new Button("Reset");
         reset.addActionListener(new ResetListener());
-        tekstvak = new TextField(15);
-        tekstvak.addActionListener(new TekstVakListener());
-
-        tekst = "Nog geen getallen gedetecteerd.";
-        uitslag = "Nog niet berekend.";
+        knop.addActionListener(new KnopListener());
+        tekstvak.addActionListener(new TekstvakListener());
         cijferinput = 0;
-
+        tekst = "Geen getallen ingevuld.";
+        uitslag = "Niet berekend.";
         add(label);
         add(tekstvak);
-        add(ok);
         add(reset);
+        add(knop);
     }
+
     public void paint(Graphics g) {
-        super.paint(g);
-        g.drawString("Je gemmidelde is:" + gemmidelde, 50, 70);
-        g.drawString(tekst, 50, 55);
-        g.drawString(uitslag, 50, 90);
+        g.drawString("Gemiddelde is: "+gemiddelde,135,70);
+        g.drawString(tekst,135,55);
+        g.drawString(uitslag,135,90);
     }
-    class TekstVakListener implements ActionListener {
+    // Input Lezer
+    class TekstvakListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            tekstvakTekst = tekstvak.getText();
-            getalinput = Double.parseDouble(tekstvakTekst);
+            s = tekstvak.getText();
+            getalinput = Double.parseDouble(s);
             teller++;
             cijferinput += getalinput;
             if (getalinput >= 5.5) {
-                tekst = "Het cijfer: " + getalinput + " is voldoende.";
-            } else {
-                tekst = "Het cijfer: " + getalinput + " is onvoldoende";
+                tekst = "Het cijfer: " +getalinput + " is voldoende.";
+            }
+            else {
+                tekst = "Het cijfer: " +getalinput +" is onvoldoende";
             }
             tekstvak.setText("");
             repaint();
         }
     }
-    class OkButtonListener implements ActionListener {
+    // Uitslag
+    class KnopListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            tekstvakTekst = tekstvak.getText();
-            gemmidelde = Double.parseDouble(tekstvakTekst);
-            gemmidelde = cijferinput / teller;
+            gemiddelde = cijferinput/teller;
 
-            gemmidelde *= 10;
-            gemmidelde = (int) gemmidelde;
-            gemmidelde /= 10;
+            gemiddelde *= 10;
+            gemiddelde = (int) gemiddelde;
+            gemiddelde /= 10;
 
-            if (gemmidelde > 5.4) {
-                s = "Je hebt een voldoende.";
-            } else {
-                s = "Je hebt een onvoldoende.";
-
+            if (gemiddelde >= 5.5) {
+                uitslag = "Je bent geslaagd als een CHAMP.";
+            }
+            else {
+                uitslag = "Je bent niet geslaagd als een LOSER.";
             }
             repaint();
         }
     }
+    // ResetKnop
     class ResetListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            gemmidelde = 0.0;
+            gemiddelde = 0.0;
             teller = 0;
             cijferinput = 0.0;
             getalinput = 0.0;
             tekstvak.getText();
             tekstvak.setText("");
-            tekst = "Nog geen getallen gedetecteerd.";
-            uitslag = "Nog niet berekend.";
+            tekst = "Geen getallen ingevuld.";
+            uitslag = "Niet berekend.";
             repaint();
         }
     }
