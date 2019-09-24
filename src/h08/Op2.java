@@ -32,6 +32,7 @@ public class Op2 extends Applet {
     }
 
     public void paint(Graphics g) {
+        setBackground(Color.green);
         g.drawString(schermtekst, 50, 60);
         g.drawString("Aantal Jongens:" + jongens, 10, 50);
         g.drawString("Aantal Mannen:" + mannen, 10, 70);

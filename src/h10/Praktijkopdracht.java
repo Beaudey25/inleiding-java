@@ -16,13 +16,12 @@ public class Praktijkopdracht extends Applet {
     String tekst;
 
     public void init() {
+        label = new Label("Zeg hier uw cijfer");
+        add(label);
 
         tekstvak = new TextField( 15);
         tekstvak.addActionListener(new TekstvakListener());
         add(tekstvak);
-
-        label = new Label("Zeg hier uw cijfer");
-        add(label);
 
         knop = new Button("Ok");
         knop.addActionListener(new TekstvakListener());

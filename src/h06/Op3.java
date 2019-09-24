@@ -1,6 +1,5 @@
 package h06;
 
-//Voorbeeld 6.3
 
 import java.awt.*;
 import java.applet.*;
